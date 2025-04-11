@@ -39,13 +39,35 @@ struct RandomView: View {
                                 Spacer()
                             }
                             
+                            HStack {
+                                Text(restaurant.foodTypes)
+                                    .foregroundStyle(.secondary)
+                                    .padding(.leading, 32)
+                                    .padding(.top, 10)
+                                Spacer()
+                            }
                             
-                            Image("burger")
-                                .resizable()
+                            
+//                            Image("burger")
+//                                .resizable()
+//                                .frame(width: 329, height: 176)
+//                                .padding(.top, 86)
+                            
+                            if let urlImg = URL(string: restaurant.url) {
+                                AsyncImage(url: urlImg) {image in
+                                    image.resizable()
+                                    image.padding(.top, 86)
+                                } placeholder: {
+                                    ProgressView()
+                                }
                                 .frame(width: 329, height: 176)
-                                .padding(.top, 106)
+                            }
                             
-                            Image("burger")
+//                            if let ur = restaurant.url {
+//                                Text("\(ur)")
+//                            }
+                            
+                            Image("foodEX")
                                 .resizable()
                                 .frame(width: 329, height: 176)
                                 .padding(.top, 16)
@@ -89,9 +111,6 @@ struct RandomView: View {
                         .background(.black)
                         .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                        
-                        
-                        
                     }
                     
                 }
@@ -101,7 +120,8 @@ struct RandomView: View {
                 }
             }
         }
-        .navigationTitle(Text("추천 받기"))
+//        .navigationTitle(Text("추천 받기"))
+        .navigationBarHidden(true)
     }
 
     func pickRandomRestaurant() {

@@ -11,8 +11,7 @@ import MapKit
 struct FindRouteView: View {
     var body: some View {
         VStack {
-            MapView(end: CLLocationCoordinate2D(latitude: 37.4951134, longitude: 126.956902), restaurantName: "맥도날드") // 맥도날드
-//                .frame(height: 400)
+            MapView(end: CLLocationCoordinate2D(latitude: 37.4979861, longitude: 126.9523913), restaurantName: "움프 Oomph") // 움프
         }
     }
 }

@@ -11,9 +11,9 @@ struct Restaurant: Identifiable {
     let name: String
     let location: String
     let category: String
-    let url: String?
+    let url: String
     let isBar: Bool = false
-    let foodTypes: String = ""
+    let foodTypes: String
     let delivery: Bool = false
     let hasSoup: Bool = false
     var id = UUID()
@@ -22,7 +22,8 @@ struct Restaurant: Identifiable {
         name = raw[0]
         location = raw[1]
         category = raw[2]
-        url = raw[3].isEmpty ? nil : raw[3]
+        foodTypes = raw[4]
+        url = raw[7]/*.isEmpty ? "" : raw[7]*/
     }
 }
 
