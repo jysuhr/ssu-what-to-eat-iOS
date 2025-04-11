@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Restaurant: Identifiable {
+struct Restaurant: Identifiable, Equatable {
     let name: String
     let location: String
     let category: String
